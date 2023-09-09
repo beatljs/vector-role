@@ -1,19 +1,7 @@
 Vector-role
 =========
 
-This role install and configure vector on target host(s).
-
-Requirements
-------------
-
-For correct configuring vector, ansible must provide following variables:
-
-| VarName  | Description                                          |
-|----------|------------------------------------------------------|
-| db_name  | The name of the database that vector will connect to |
-| db_table | The table name in database                           |
-| db_user  | User name for database connection                    |
-| db_pass  | User password                                        |
+This role install and configure `vector` on target host(s).
 
 Role Variables
 --------------
@@ -26,9 +14,11 @@ Role Variables
 Example Playbook
 ----------------
 
+```
     - hosts: servers
       roles:
          - vector-role 
+```
 
 License
 -------
@@ -38,5 +28,6 @@ MIT
 Author Information
 ------------------
 
-Sergey Zhukov 
-(beatljs@mail.ru)
+Sergey Zhukov (beatljs@mail.ru)
+
+DevOps-32

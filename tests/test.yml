@@ -3,4 +3,4 @@
   remote_user: root
   name: Vector | Test role
   roles:
-    - vector-role
+    - vector_role

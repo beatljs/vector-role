@@ -1,4 +1,4 @@
-Vector
+Vector-role
 =========
 
 This role can install Vector for Clickhouse

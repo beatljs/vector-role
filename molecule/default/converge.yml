@@ -6,4 +6,4 @@
   tasks:
     - name: "Include vector-role"
       ansible.builtin.include_role:
-        name: "vector_role"
+        name: "sergey.vector_role"

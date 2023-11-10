@@ -15,7 +15,7 @@ lint: |
 platforms:
   - name: pyubuntu
     image: beatljs/pyubuntu:systemd
-    pre_build_image: true
+#    pre_build_image: true
     command: systemd
     privileged: true
 #  - name: centos_7

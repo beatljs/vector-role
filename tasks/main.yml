@@ -55,6 +55,6 @@
       path: "{{ vector_config.data_dir }}"
       state: directory
       mode: 0777
-  notify: Restart Vector service
+    notify: Restart Vector service
 - name: Flush handlers
   ansible.builtin.meta: flush_handlers

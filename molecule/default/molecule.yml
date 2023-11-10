@@ -3,11 +3,61 @@ dependency:
   name: galaxy
 driver:
   name: docker
+  options:
+    D: true
+    vvv: true
+
+lint: |
+  yamllint .
+  ansible-lint
+  flake8
+
 platforms:
-  - name: instance
-    image: docker.io/pycontribs/centos:8
+  - name: pyubuntu
+    image: beatljs/pyubuntu:systemd
     pre_build_image: true
+    command: systemd
+    privileged: true
+#  - name: centos_7
+#    image: pycontrib/centos:7
+#    dockerfile: ../resources/Dockerfile.j2
+#    pre_build_image: true
+#    command: /usr/sbin/init
+#    privileged: true
+#    capabilities:
+#      - SYS_ADMIN
+#    tmpfs:
+#      - /run
+#      - /tmp
+#    volumes:
+#      - /sys/fs/cgroup:/sys/fs/cgroup
+#    env:
+#      ANSIBLE_USER: ansible
+#      SUDO_GROUP: wheel
+#      DEPLOY_GROUP: deployer
+#      container: docker
+#  - name: debian_buster
+#    image: python:3.8-slim-buster
+#    dockerfile: ../resources/Dockerfile.j2
+#    pre_build_image: true
+#    command: /usr/sbin/init
+#    privileged: true
+#    capabilities:
+#      - SYS_ADMIN
+#    tmpfs:
+#      - /run
+#      - /tmp
+#    volumes:
+#      - /sys/fs/cgroup:/sys/fs/cgroup
+#    env:
+#      ANSIBLE_USER: ansible
+#      SUDO_GROUP: sudo
+#      DEPLOY_GROUP: deployer
+#      container: docker
 provisioner:
   name: ansible
+  options:
+    vvv: true
+    D: true
 verifier:
   name: ansible
